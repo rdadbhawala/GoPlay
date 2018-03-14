@@ -15,9 +15,14 @@ func main() {
 	cmd.Stderr = errStr
 	cmd.Stdout = outStr
 	cmd.Start()
-	cmd.Wait()
 
 	fmt.Println("out len", outStr.Len())
 	fmt.Println("err len", errStr.Len())
 
+	cmd.Wait()
+
+	fmt.Println("out len", outStr.Len())
+	fmt.Println(string(outStr.Bytes()))
+	fmt.Println("err len", errStr.Len())
+	fmt.Println(string(errStr.Bytes()))
 }
