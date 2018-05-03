@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	limit := 3
+	limit := 5
 	start := []coordinate{coordinate{0, 0}}
 	for ctr := 0; ctr < limit; ctr++ {
 		start = calculateFor(start)
 		newLen := len(start)
-		fmt.Println(ctr, newLen)
+		fmt.Println(ctr+1, newLen, (ctr+1)*4+1)
 		draw(ctr, start)
 	}
 }
